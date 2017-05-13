@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Inspired</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <script src="js/http_code.jquery.com_jquery-3.2.1.js"></script>
+        <script src="js/color-thief.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/mustache.js"></script>
+        <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+              integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+    <div class="navbar navbar-fixed-top" id="navigation">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn navbar-button" data-toggle="collapse" data-target=".nav-collapse" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+                <a class="brand" href="./index.html"></a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav" id="mainnav">
+                        <li class="iamhere" id="index"><a href="./index.html">Home</a></li>
+                        <li class="" id="flowers"><a href="./flowers.html">Flowers</a></li>
+                        <li class="" id="contact"><a href="./contact.html">Contact Me</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 id="main-title">Find Inspiration</h1>
+
+<section id="myimages-images" class="myimages-section"></section>
+
+
+
+
+    <!-- Mustache templates -->
+    <script id='image-section-template' type='text/x-mustache'>
+    {{#images}}
+    <div class="image-section {{class}}">
+      <div class="image-wrap">
+        <button class="run-functions-button">
+          <span class="no-touch-label">Palette</span>
+        </button>
+        <img class="target-image" src="{{file}}" />
+        <span>Artist: {{artist}}</span>
+      </div>
+      <div class="color-thief-output"></div>
+    </div>
+    {{/images}}
+  </script>
+
+    <script id="color-thief-output-template" type="text/x-mustache">
+    <div class="function get-color">
+      <!--<h3 class="function-title">Dominant Color</h3>-->
+      <!--<div class="swatches">-->
+        <!--<div class="swatch" style="background-color: rgb({{color.0}}, {{color.1}}, {{color.2}})"></div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div class="function get-palette">
+      <h3 class="function-title">Color Palette</h3>
+      <div class="function-output">
+        <div class="swatches">
+          {{#palette}}
+            <div class="swatch" style="background-color: rgb({{0}}, {{1}}, {{2}})"></div>
+          {{/palette}}
+        </div>
+      </div>
+    </div>
+
+  </script>
+
+    </body>
+</html>
